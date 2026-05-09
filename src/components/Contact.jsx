@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Mail, MapPin, Phone, Send, Linkedin, Github, Twitter } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Github } from 'lucide-react';
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
 
@@ -60,15 +60,15 @@ const Contact = () => {
     } catch (error) {
       console.error('Email send error:', error);
       
-      let errorMessage = 'Something went wrong! Please try again or email me directly at shanjidahmed66@gmail.com';
+      let errorMessage = 'Something went wrong! Please try again or email me directly at mstborsha852005@gmail.com';
       
       if (error.message && error.message.includes('EmailJS not configured')) {
-        errorMessage = 'Email service is not configured yet. Please contact me directly at shanjidahmed66@gmail.com';
+        errorMessage = 'Email service is not configured yet. Please contact me directly at mstborsha852005@gmail.com';
       } else if (error.text) {
         if (error.text.includes('insufficient authentication scopes')) {
-          errorMessage = 'Gmail permission issue detected. Please reconnect your Gmail service in EmailJS dashboard or contact me at shanjidahmed66@gmail.com';
+          errorMessage = 'Gmail permission issue detected. Please reconnect your Gmail service in EmailJS dashboard or contact me at mstborsha852005@gmail.com';
         } else {
-          errorMessage = `Error: ${error.text}. Please email me directly at shanjidahmed66@gmail.com`;
+          errorMessage = `Error: ${error.text}. Please email me directly at mstborsha852005@gmail.com`;
         }
       }
       
@@ -91,26 +91,25 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'shanjidahmed66@gmail.com',
-      link: 'https://mail.google.com/mail/?view=cm&fs=1&to=shanjidahmed66@gmail.com',
+      value: 'mstborsha852005@gmail.com',
+      link: 'https://mail.google.com/mail/?view=cm&fs=1&to=mstborsha852005@gmail.com',
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+880 130 929 7183',
-      link: 'tel:+8801309297183',
+      value: '01985349404',
+      link: 'tel:01985349404',
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'Dhaka, Bangladesh',
+      value: 'Tangail, Dhaka, Bangladesh',
       link: null,
     },
   ];
 
   const socialLinks = [
     { icon: Github, link: 'https://github.com/shanjid5566', label: 'GitHub' },
-    { icon: Linkedin, link: 'https://www.linkedin.com/in/shanjid-ahmed-0b1691157/', label: 'LinkedIn' },
   ];
 
   return (
