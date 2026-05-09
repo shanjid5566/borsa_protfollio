@@ -8,53 +8,53 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: "Frontend",
+      title: "WordPress",
       skills: [
-        { name: "React", level: 90 },
-        { name: "JavaScript/TypeScript", level: 85 },
-        { name: "Tailwind CSS", level: 90 },
-        { name: "Next.js", level: 75 },
-        { name: "HTML/CSS", level: 90 },
-        { name: "Redux", level: 80 },
+        { name: "Elementor & Elementor Pro", level: 90 },
+        { name: "WooCommerce Setup", level: 85 },
+        { name: "Crocoblock / JetEngine", level: 85 },
+        { name: "HTML/CSS", level: 80 },
+        { name: "Client Requirement Analysis", level: 88 },
       ],
     },
     {
-      title: "Backend",
+      title: "Mobile Development",
       skills: [
-        { name: "Node.js", level: 70 },
-        { name: "Express.js", level: 75 },
-        { name: "MongoDB", level: 85 },
-        { name: "PostgreSQL", level: 75 },
-        { name: "REST APIs", level: 84 },
+        { name: "Flutter", level: 85 },
+        { name: "Dart", level: 85 },
+        { name: "GetX State Management", level: 80 },
+        { name: "Responsive Design", level: 90 },
+        { name: "Custom Widgets", level: 85 },
+        { name: "UI/UX Design", level: 88 },
       ],
     },
     {
-      title: "Tools & Others",
+      title: "Tools & Design",
       skills: [
-        { name: "Git & GitHub", level: 88 },
+        { name: "Android Studio", level: 85 },
         { name: "VS Code", level: 90 },
-        { name: "Figma", level: 79 },
-        { name: "Vercel", level: 70 },
-        { name: "Coolify", level: 65 },
+        { name: "Postman", level: 80 },
+        { name: "Figma", level: 75 },
+        { name: "Pixel-Perfect Design", level: 88 },
       ],
     },
   ];
 
   const tools = [
-    "React",
-    "Node.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "MongoDB",
-    "Express",
-    "Next.js",
-    "Git",
+    "WordPress",
+    "Elementor",
+    "WooCommerce",
+    "Flutter",
+    "Dart",
+    "GetX",
+    "HTML/CSS",
+    "Crocoblock",
+    "JetEngine",
+    "Android Studio",
+    "VS Code",
+    "Postman",
     "Figma",
-    "Redux",
-    "Firebase",
-    "Framer Motion",
-    "Vercel",
-    "Coolify",
+    "Responsive Design",
   ];
 
   return (
@@ -90,7 +90,7 @@ const Skills = () => {
             transition={{ delay: 0.5 }}
             className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
           >
-            Technologies and tools I use to bring ideas to life
+            WordPress expertise and Flutter mobile development skills
           </motion.p>
         </div>
 
