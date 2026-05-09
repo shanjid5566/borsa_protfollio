@@ -1,0 +1,286 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@layer base {
+  * {
+    cursor: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* For fixed navbar */
+  }
+
+  body {
+    @apply font-sans antialiased bg-gray-50 dark:bg-dark-900;
+  }
+
+  ::selection {
+    @apply bg-primary-500 text-white;
+  }
+
+  /* Smooth scrolling for all anchors */
+  a[href^="#"] {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease-out;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease;
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.cursor-hover .cursor-outline {
+  width: 60px;
+  height: 60px;
+  border-color: #0ea5e9;
+  animation: none;
+}
+
+.cursor-hover .cursor-dot {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: #0ea5e9;
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary-500/50 hover:-translate-y-1 active:translate-y-0;
+    animation: buttonGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes buttonGlow {
+    0%,
+    100% {
+      box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.3);
+    }
+    50% {
+      box-shadow: 0 10px 25px -3px rgba(2, 132, 199, 0.5);
+    }
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-dark-800 hover:bg-gray-50 dark:hover:bg-dark-700 text-gray-900 dark:text-white font-medium rounded-lg transition-all duration-300 border-2 border-gray-200 dark:border-dark-700 hover:border-primary-500 dark:hover:border-primary-500 hover:-translate-y-1 active:translate-y-0;
+  }
+
+  .card {
+    @apply bg-white dark:bg-dark-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-dark-700 backdrop-blur-sm;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .card:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  /* Smooth transitions for all interactive elements */
+  a,
+  button,
+  input,
+  textarea {
+    @apply transition-all duration-300;
+  }
+
+  a:hover,
+  button:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Professional input styles */
+  input:focus,
+  textarea:focus {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-dark-900;
+    animation: inputFocus 0.3s ease;
+  }
+
+  @keyframes inputFocus {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Smooth image loading */
+  img {
+    @apply transition-all duration-500;
+    animation: imageLoad 0.6s ease;
+  }
+
+  @keyframes imageLoad {
+    from {
+      opacity: 0;
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+  img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-dark-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-500 rounded-full hover:bg-primary-600;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Gradient text animation */
+  @keyframes gradientShift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #0ea5e9, #0284c7, #0ea5e9);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  /* Slide in from left */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-left {
+    animation: slideInLeft 0.6s ease-out;
+  }
+
+  /* Slide in from right */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-right {
+    animation: slideInRight 0.6s ease-out;
+  }
+
+  /* Scale in animation */
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-scale {
+    animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
