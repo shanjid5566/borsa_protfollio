@@ -31,14 +31,10 @@ const Footer = () => {
     {
       title: "Social",
       links: [
-        { name: "GitHub", href: "https://github.com/shanjid5566" },
-        {
-          name: "LinkedIn",
-          href: "https://www.linkedin.com/in/shanjid-ahmed-0b1691157/",
-        },
+        { name: "GitHub", href: "https://github.com/mst-borsha" },
         {
           name: "Email",
-          href: "https://mail.google.com/mail/?view=cm&fs=1&to=shanjidahmed66@gmail.com",
+          href: "https://mail.google.com/mail/?view=cm&fs=1&to=mstborsha852005@gmail.com",
         },
       ],
     },
@@ -63,7 +59,7 @@ const Footer = () => {
               create something amazing together.
             </p>
             <div className="flex gap-2 items-center text-sm">
-              <span>Made by Shanjid Ahmed Rafi</span>
+              <span>Building digital experiences with WordPress & Flutter</span>
             </div>
           </div>
 
@@ -103,7 +99,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-dark-700 text-center text-sm">
-          <p>© {new Date().getFullYear()} Shanjid Ahmed Rafi. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} All rights reserved.</p>
         </div>
       </div>
 
